@@ -31,7 +31,9 @@ Institution: Indian Institute of Technology, Indore
 - ✅ **Serial Communication** between FPGA and other components
 
 ---
+## Test run video recording
 
+[Click here to watch the demo video](https://youtu.be/6UNRDgoQqkM)
 ## Learning Outcomes
 
 - FPGA Design & Programming  
