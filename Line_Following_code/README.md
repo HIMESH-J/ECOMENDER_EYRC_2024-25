@@ -17,14 +17,25 @@ This project implements a **line-following robot** using Verilog HDL on FPGA, in
 
 ## 📦 Features
 
-- ✅ Sensor-driven line detection (Left, Center, Right)
-- ✅ PWM motor speed control (fast/slow adjustment)
-- ✅ Node detection using 3-sensor input (`ld1`, `ld2`, `ld3`)
-- ✅ Broken line recovery using stop state + t_counter logic
-- ✅ Lap counting and finish flag after 2 full laps
-- ✅ RISC-V integration (optional: for higher-level control/decision-making)
+- Sensor-driven line detection (Left, Center, Right)
+- PWM motor speed control (fast/slow adjustment)
+- Node detection using 3-sensor input (`ld1`, `ld2`, `ld3`)
+- Lap counting and finish flag after 2 full laps
+- RISC-V integration (optional: for higher-level control/decision-making)
+- **Line Following:**  
+  Uses 3 IR sensors to track black lines and junctions (nodes). Supports partial turns and broken line recovery using a custom FSM.
+
+- **Color Detection:**  
+  Detects Red, Green, or Blue using frequency-based filtering with a TCS3200 color sensor. Outputs `color = 3'b100 (Red)`, `3'b010 (Green)`, or `3'b001 (Blue)`.
+
+- **UART Transmission:**  
+  Detected node and color data are encoded and sent over UART via a Bluetooth module (e.g., HC-05). Parity support included (even/odd).
+
+- **RISC-V Integration:**  
+  Easily controlled via RISC-V processor for higher-level automation.
 
 ---
+
 
 ## 🚦 Line Following Logic
 
